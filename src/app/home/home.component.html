@@ -28,47 +28,32 @@
           class="form-control"
           placeholder="Search..."
           aria-label="Search"
+          [(ngModel)]="searchField"
+          name="searchField"
+          (ngModelChange)="retrieveData($event)"
         />
       </form>
-
-      <!-- <div class="flex-shrink-0 dropdown">
-              <a
-                href="#"
-                class="d-block link-dark text-decoration-none dropdown-toggle"
-                id="dropdownUser2"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="https://github.com/mdo.png"
-                  alt="mdo"
-                  width="32"
-                  height="32"
-                  class="rounded-circle"
-                />
-              </a>
-              <ul
-                class="dropdown-menu text-small shadow"
-                aria-labelledby="dropdownUser2"
-              >
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-              </ul>
-            </div> -->
     </div>
   </div>
 </header>
-<button (click)="retiveData()"></button>
+<!-- <button (click)="retrieveData($event)">click</button> -->
 <div class="container-fluid pb-3">
   <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr">
     <div class="bg-light border rounded-3">
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+      <!-- <iframe *ngFor="let viedo of videos" width="420" height="315"
+[src]="'https://www.youtube.com/embed/'+ viedo.id.videoId | safe">
+</iframe> -->
     </div>
     <div class="bg-light border rounded-3">
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+      <iframe
+        *ngFor="let viedo of videos"
+        width="420"
+        height="315"
+        [src]="'https://www.youtube.com/embed/' + viedo.id.videoId | safe"
+      >
+      </iframe>
     </div>
   </div>
 </div>
