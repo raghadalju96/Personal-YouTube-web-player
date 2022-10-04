@@ -13,18 +13,22 @@ export class HomeComponent implements OnInit {
   getData = false;
   //searchField = new FormControl("")
   searchField = '';
+  firstVideo : any
   constructor(private data: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.retrieveData()
+  }
 
-  retrieveData(event: Event) {
+  retrieveData() {
     console.log(this.searchField);
 
     this.data.getVideos(this.searchField).subscribe((data) => {
       this.videoData = data;
       console.log(this.videoData);
       this.videos = this.videoData.items;
-      console.log(this.videos);
+      this.firstVideo = this.videoData.items[0].id.videoId
+      console.log(this.firstVideo);
       this.getData = true;
     });
   }
