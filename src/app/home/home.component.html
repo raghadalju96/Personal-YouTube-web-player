@@ -36,21 +36,23 @@
     </div>
   </div>
 </header>
-<!-- <button (click)="retrieveData($event)">click</button> -->
 <div class="container-fluid pb-3">
   <div class="d-grid gap-3 videoGrid">
-    <div class="rounded-3">
-      <iframe *ngFor="let viedo of videos" class="videosList"
-[src]="'https://www.youtube.com/embed/'+ viedo.id.videoId | safe">
-</iframe>
-
+    <div class="rounded-3 one">
+      <iframe
+        *ngFor="let viedo of videos"
+        class="videosList"
+        [src]="'https://www.youtube.com/embed/' + viedo.id.videoId | safe"
+      >
+      </iframe>
     </div>
-    <div class="border rounded-3">
-      <iframe class="firstVideo"
-        
+    <div class="rounded-3 two">
+      <iframe
+        class="firstVideo"
         [src]="'https://www.youtube.com/embed/' + firstVideo | safe"
       >
       </iframe>
+      <p class="title">{{ title }}</p>
     </div>
   </div>
 </div>
